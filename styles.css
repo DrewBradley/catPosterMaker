@@ -26,7 +26,8 @@ body {
     align-items: center;
 }
 button {
-    margin: 10%;
+    margin: 5%;
+    padding: 3em;
     font-size: 100%;
     background-color: blanchedalmond;
     cursor: pointer;
