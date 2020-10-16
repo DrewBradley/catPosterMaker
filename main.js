@@ -1,9 +1,9 @@
 var imagesArray = [
-    '/Users/drewbradley/interactive-practice/pics/cat1.png',
-    '/Users/drewbradley/interactive-practice/pics/cat2.jpeg',
-    '/Users/drewbradley/interactive-practice/pics/cat3.jpeg',
-    '/Users/drewbradley/interactive-practice/pics/cat4.jpeg',
-    '/Users/drewbradley/interactive-practice/pics/cats5.jpg'
+    './pics/cat1.png',
+    './pics/cat2.jpeg',
+    './pics/cat3.jpeg',
+    './pics/cat4.jpeg',
+    './pics/cats5.jpg'
 ];
 
 var titleArray = [
@@ -23,11 +23,11 @@ var quotesArray = [
 ]
 
 var pupImagesArray = [
-    '/Users/drewbradley/interactive-practice/pics/pup1.jpg',
-    '/Users/drewbradley/interactive-practice/pics/pup2.jpg',
-    '/Users/drewbradley/interactive-practice/pics/pup3.jpg',
-    '/Users/drewbradley/interactive-practice/pics/pup4.jpg',
-    '/Users/drewbradley/interactive-practice/pics/pup5.jpg'
+    './pics/pup1.jpg',
+    './pics/pup2.jpg',
+    './pics/pup3.jpg',
+    './pics/pup4.jpg',
+    './pics/pup5.jpg'
 ];
 
 var pupTitleArray = [
