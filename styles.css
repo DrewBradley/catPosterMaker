@@ -12,12 +12,21 @@ body {
     width: 850px;
 }
 
+.main-frame {
+    display: block;
+}
+
+.puppy-main {
+    display: none;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.button {
+button {
+    margin: 10%;
     font-size: 100%;
     background-color: blanchedalmond;
     cursor: pointer;
