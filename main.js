@@ -46,48 +46,57 @@ var pupQuotesArray = [
     "dog say bork bork bork."
 ]
 
+
+
 var button = document.querySelector('.button');
 var pupButton = document.querySelector('.pup-button');
+
 
 function randomIndex(array){
     return Math.floor(Math.random() * array.length);
 };
 
 var mainFrame = document.querySelector('.main-frame');
-var pupperMain = document.querySelector('.puppy-main')
+var catImage = document.querySelector('.image');
+var catTitle = document.querySelector('.title');
+var catQuote = document.querySelector('.paragraph');
+
+var formSection = document.querySelector(".form");
+var formButton = document.querySelector('.form-button');
 
 function catShuffle() {
-    var randomCatPoster = {
-        img: imagesArray[randomIndex(imagesArray)],
-        title: titleArray[randomIndex(titleArray)],
-        quote: quotesArray[randomIndex(quotesArray)]
-    };
-    mainFrame.innerHTML = 
-        `<img class="image" src="${randomCatPoster.img}" alt="">
-        <h1 class = 'title'>${randomCatPoster.title}</h1>
-        <p class="paragraph">${randomCatPoster.quote}</p>`;
-    mainFrame.style.display = 'block';
-    pupperMain.style.display = 'none';
+    var posterArray = [];
+    posterArray.push(imagesArray[randomIndex(imagesArray)]);
+    posterArray.push(titleArray[randomIndex(titleArray)]);
+    posterArray.push(quotesArray[randomIndex(quotesArray)]);
+    catImage.src = posterArray[0];
+    catTitle.innerText = posterArray[1];
+    catQuote.innerText = posterArray[2];
+    console.log(posterArray);
+    formSection.classList.add('hidden');
+    mainFrame.classList.remove('hidden');
+
 }
 
 function dogShuffle() {
-    var randomDogPoster = {
-        img: pupImagesArray[randomIndex(pupImagesArray)],
-        title: pupTitleArray[randomIndex(pupTitleArray)],
-        quote: pupQuotesArray[randomIndex(pupQuotesArray)]
-    };
-    pupperMain.innerHTML = 
-        `<img class="image" src="${randomDogPoster.img}" alt="">
-        <h1 class = 'title'>${randomDogPoster.title}</h1>
-        <p class="paragraph">${randomDogPoster.quote}</p>`;
-    mainFrame.style.display = 'none';
-    pupperMain.style.display = 'block';
+    var posterArray = [];
+    posterArray.push(pupImagesArray[randomIndex(pupImagesArray)]);
+    posterArray.push(pupTitleArray[randomIndex(pupTitleArray)]);
+    posterArray.push(pupQuotesArray[randomIndex(pupQuotesArray)]);
+    catImage.src = posterArray[0];
+    catTitle.innerText = posterArray[1];
+    catQuote.innerText = posterArray[2];
+    formSection.classList.add('hidden');
+    mainFrame.classList.remove('hidden');
+}
+
+function openForm() {
+    mainFrame.classList.add('hidden');
+    formSection.classList.remove('hidden');
 }
 
 
 catShuffle();
 button.addEventListener("click", catShuffle);
-
-
-dogShuffle();
 pupButton.addEventListener("click", dogShuffle);
+formButton.addEventListener('click', openForm);

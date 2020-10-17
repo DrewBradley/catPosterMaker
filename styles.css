@@ -17,7 +17,7 @@ body {
 }
 
 .puppy-main {
-    display: none;
+    display: block;
 }
 
 .button-container {
@@ -33,6 +33,10 @@ button {
     cursor: pointer;
     border: 0;
     border-radius: 5px;
+}
+
+.hidden {
+    display: none !important;
 }
 
 @media screen and (max-width: 600px) {
