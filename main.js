@@ -56,6 +56,7 @@ var catTitle = document.querySelector('.title');
 var catQuote = document.querySelector('.paragraph');
 var button = document.querySelector('.button');
 var pupButton = document.querySelector('.pup-button');
+var saveButton = document.querySelector('.save-button');
 
 var formSection = document.querySelector(".form");
 var formButton = document.querySelector('.form-button');
@@ -64,15 +65,16 @@ var titleInput = document.querySelector('.title-input');
 var quoteInput = document.querySelector('.quote-input');
 var showPoster = document.querySelector('.show-poster');
 
+
+
 function catShuffle() {
-    var posterArray = [];
+    var posterArray = []; 
     posterArray.push(imagesArray[randomIndex(imagesArray)]);
     posterArray.push(titleArray[randomIndex(titleArray)]);
     posterArray.push(quotesArray[randomIndex(quotesArray)]);
     catImage.src = posterArray[0];
     catTitle.innerText = posterArray[1];
     catQuote.innerText = posterArray[2];
-    console.log(posterArray);
     formSection.classList.add('hidden');
     mainFrame.classList.remove('hidden');
 }
@@ -95,16 +97,31 @@ function openForm() {
 }
 
 function makePoster() {
-    catImage.src = imageInput.value;
-    catTitle.innerText = titleInput.value;
-    catQuote.innerText = quoteInput.value;
+    var posterArray = [];
+    posterArray.push(imageInput.value, titleInput.value, quoteInput.value);
+    catImage.src = posterArray[0];
+    catTitle.innerText = posterArray[1];
+    catQuote.innerText = posterArray[2];
     formSection.classList.add('hidden');
     mainFrame.classList.remove('hidden');
 }
 
+var savedPosterArray = [];
+function savePoster () {
+    var newArray = [];
+    newArray.push(catImage.src, catTitle.innerText, catQuote.innerText);
+    savedPosterArray.push(newArray);
+    console.log(savedPosterArray);
+}
+
 catShuffle();
+
+// catImage.src = posterArray[0];
+// catTitle.innerText = posterArray[1];
+// catQuote.innerText = posterArray[2];
 
 button.addEventListener("click", catShuffle);
 pupButton.addEventListener("click", dogShuffle);
 formButton.addEventListener('click', openForm);
 showPoster.addEventListener('click', makePoster);
+saveButton.addEventListener('click', savePoster);
