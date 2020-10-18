@@ -46,12 +46,6 @@ var pupQuotesArray = [
     "dog say bork bork bork."
 ]
 
-
-
-var button = document.querySelector('.button');
-var pupButton = document.querySelector('.pup-button');
-
-
 function randomIndex(array){
     return Math.floor(Math.random() * array.length);
 };
@@ -60,9 +54,15 @@ var mainFrame = document.querySelector('.main-frame');
 var catImage = document.querySelector('.image');
 var catTitle = document.querySelector('.title');
 var catQuote = document.querySelector('.paragraph');
+var button = document.querySelector('.button');
+var pupButton = document.querySelector('.pup-button');
 
 var formSection = document.querySelector(".form");
 var formButton = document.querySelector('.form-button');
+var imageInput = document.querySelector('.image-input');
+var titleInput = document.querySelector('.title-input');
+var quoteInput = document.querySelector('.quote-input');
+var showPoster = document.querySelector('.show-poster');
 
 function catShuffle() {
     var posterArray = [];
@@ -75,7 +75,6 @@ function catShuffle() {
     console.log(posterArray);
     formSection.classList.add('hidden');
     mainFrame.classList.remove('hidden');
-
 }
 
 function dogShuffle() {
@@ -95,8 +94,17 @@ function openForm() {
     formSection.classList.remove('hidden');
 }
 
+function makePoster() {
+    catImage.src = imageInput.value;
+    catTitle.innerText = titleInput.value;
+    catQuote.innerText = quoteInput.value;
+    formSection.classList.add('hidden');
+    mainFrame.classList.remove('hidden');
+}
 
 catShuffle();
+
 button.addEventListener("click", catShuffle);
 pupButton.addEventListener("click", dogShuffle);
 formButton.addEventListener('click', openForm);
+showPoster.addEventListener('click', makePoster);
